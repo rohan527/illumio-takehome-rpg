@@ -7,8 +7,8 @@ class TestFlowLogs(unittest.TestCase):
 
     def setUp(self):
         self.lookup_table = {
-            ('443', 'tcp'): 'sv_P2',
-            ('25', 'tcp'): 'sv_P1'
+            ('49153', 'tcp'): 'sv_P2',
+            ('49154', 'tcp'): 'sv_P1'
         }
         self.logs = [
             ['2', '123', 'eni-xyz', '10.0.1.1', '198.51.100.1', '443', '49153', '6', '25', '2000', '1620140761', '1620140821', 'ACCEPT', 'OK'],
@@ -31,8 +31,8 @@ class TestFlowLogs(unittest.TestCase):
 
         self.assertEqual(tag_counts['sv_P2'], 1)
         self.assertEqual(tag_counts['sv_P1'], 1)
-        self.assertEqual(port_protocol_counts[('443', 'tcp')], 1)
-        self.assertEqual(port_protocol_counts[('25', 'tcp')], 1)
+        self.assertEqual(port_protocol_counts[('49153', 'tcp')], 1)
+        self.assertEqual(port_protocol_counts[('49154', 'tcp')], 1)
 
     def test_improper_log(self):
         ans = LogValidator.is_valid_log(self.logs[0][3:])
