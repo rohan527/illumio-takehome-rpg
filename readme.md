@@ -18,7 +18,7 @@ Please make sure that you have Python installed on your device. You can find ins
 ```
 cd path_to_illumio-takehome-rpg
 ```
-4. create a virtual environment to run the code
+4. create a virtual environment to run the code (optional and not necessary since we don't use any non-default libraries)
 ```
 python -m venv venv
 source venv/bin/activate
